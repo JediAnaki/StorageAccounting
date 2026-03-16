@@ -1,0 +1,40 @@
+# Git
+.git/
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Documentation
+*.md
+docs/
+specs/
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Development files
+.env*
+*.log
+
+# Build artifacts
+dist/
+build/
+tmp/
+
+# Test files
+*_test.go
+tests/
+coverage.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Deployment files (except what we need)
+deployments/ssl/
+deployments/*.example
