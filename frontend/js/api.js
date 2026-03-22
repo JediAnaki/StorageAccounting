@@ -50,10 +50,16 @@ const api = {
             body: JSON.stringify(data)
         }),
 
-    updateItemQuantity: (id, delta, note = '') =>
-        apiRequest(`/items/${id}/quantity`, {
+    addStock: (id, quantity, note = null) =>
+        apiRequest(`/items/${id}/add`, {
             method: 'PUT',
-            body: JSON.stringify({ delta, note })
+            body: JSON.stringify({ quantity, note })
+        }),
+
+    removeStock: (id, quantity, note = null) =>
+        apiRequest(`/items/${id}/remove`, {
+            method: 'PUT',
+            body: JSON.stringify({ quantity, note })
         }),
 
     // Transactions

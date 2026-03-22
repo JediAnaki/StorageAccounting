@@ -44,23 +44,23 @@ Based on plan.md, this project uses:
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T009 Create database migration 001_create_items.sql in backend/migrations/ with items table (id, name, current_quantity, photo_file_id, photo_s3_key, created_at, updated_at, deleted_at, created_by, version for optimistic locking)
-- [ ] T010 [P] Create database migration 002_create_transactions.sql in backend/migrations/ with transactions table (id, item_id, user_id, timestamp, previous_quantity, new_quantity, delta, note)
-- [ ] T011 [P] Implement base models: User in backend/internal/models/user.go (Telegram user ID, display name)
-- [ ] T012 [P] Implement Item model in backend/internal/models/item.go (all attributes from schema)
-- [ ] T013 [P] Implement Transaction model in backend/internal/models/transaction.go (all attributes from schema)
-- [ ] T014 Setup PostgreSQL connection pool in backend/internal/repository/db.go with pgx driver
-- [ ] T015 [P] Implement Telegram WebApp authentication middleware in backend/internal/api/middleware.go (validate initData per Telegram spec)
-- [ ] T016 [P] Implement error handling middleware in backend/internal/api/middleware.go (structured JSON error responses)
-- [ ] T017 [P] Implement logging middleware in backend/internal/api/middleware.go using standard library logger
-- [ ] T018 [P] Setup API routing structure in backend/internal/api/handlers.go with base handler registration
-- [ ] T019 [P] Implement environment configuration loader in backend/cmd/server/main.go (database URL, Telegram bot token, S3 credentials, server port)
-- [ ] T020 [P] Create Telegram bot initialization in backend/internal/telegram/bot.go (webhook setup, basic bot commands)
-- [ ] T021 [P] Implement Telegram WebApp launch helper in backend/internal/telegram/webapp.go (generate Mini App URL)
-- [ ] T022 [P] Create frontend API client base in frontend/js/api.js (fetch wrapper with authentication headers)
-- [ ] T023 [P] Create frontend Telegram SDK integration in frontend/js/telegram.js (WebApp.initData, user info, theme)
-- [ ] T024 [P] Create base UI component framework in frontend/js/ui.js (modal, loading indicator, toast notification helpers)
-- [ ] T025 [P] Create mobile-first CSS framework in frontend/css/styles.css (touch-optimized buttons, responsive grid, color scheme)
+- [X] T009 Create database migration 001_create_items.sql in backend/migrations/ with items table (id, name, current_quantity, photo_file_id, photo_s3_key, created_at, updated_at, deleted_at, created_by, version for optimistic locking)
+- [X] T010 [P] Create database migration 002_create_transactions.sql in backend/migrations/ with transactions table (id, item_id, user_id, timestamp, previous_quantity, new_quantity, delta, note)
+- [X] T011 [P] Implement base models: User in backend/internal/models/user.go (Telegram user ID, display name)
+- [X] T012 [P] Implement Item model in backend/internal/models/item.go (all attributes from schema)
+- [X] T013 [P] Implement Transaction model in backend/internal/models/transaction.go (all attributes from schema)
+- [X] T014 Setup PostgreSQL connection pool in backend/internal/repository/db.go with pgx driver
+- [X] T015 [P] Implement Telegram WebApp authentication middleware in backend/internal/api/middleware.go (validate initData per Telegram spec)
+- [X] T016 [P] Implement error handling middleware in backend/internal/api/middleware.go (structured JSON error responses)
+- [X] T017 [P] Implement logging middleware in backend/internal/api/middleware.go using standard library logger
+- [X] T018 [P] Setup API routing structure in backend/internal/api/handlers.go with base handler registration
+- [X] T019 [P] Implement environment configuration loader in backend/cmd/server/main.go (database URL, Telegram bot token, S3 credentials, server port)
+- [X] T020 [P] Create Telegram bot initialization in backend/internal/telegram/bot.go (webhook setup, basic bot commands)
+- [X] T021 [P] Implement Telegram WebApp launch helper in backend/internal/telegram/webapp.go (generate Mini App URL)
+- [X] T022 [P] Create frontend API client base in frontend/js/api.js (fetch wrapper with authentication headers)
+- [X] T023 [P] Create frontend Telegram SDK integration in frontend/js/telegram.js (WebApp.initData, user info, theme)
+- [X] T024 [P] Create base UI component framework in frontend/js/ui.js (modal, loading indicator, toast notification helpers)
+- [X] T025 [P] Create mobile-first CSS framework in frontend/css/styles.css (touch-optimized buttons, responsive grid, color scheme)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -74,20 +74,20 @@ Based on plan.md, this project uses:
 
 ### Implementation for User Story 1
 
-- [ ] T026 [P] [US1] Implement ItemRepository.ListAll() in backend/internal/repository/item_repo.go with pagination support (limit, offset)
-- [ ] T027 [P] [US1] Implement ItemRepository.GetByID() in backend/internal/repository/item_repo.go with transaction history join
-- [ ] T028 [P] [US1] Implement TransactionRepository.ListByItemID() in backend/internal/repository/transaction_repo.go (reverse chronological, pagination)
-- [ ] T029 [US1] Implement InventoryService.ListItems() in backend/internal/service/inventory_service.go (calls ItemRepository, handles pagination)
-- [ ] T030 [US1] Implement InventoryService.GetItemDetails() in backend/internal/service/inventory_service.go (item + transactions, pagination)
-- [ ] T031 [US1] Implement GET /api/items endpoint in backend/internal/api/handlers.go (auth required, pagination params, returns JSON list)
-- [ ] T032 [US1] Implement GET /api/items/:id endpoint in backend/internal/api/handlers.go (auth required, returns item + transactions)
-- [ ] T033 [US1] Implement inventory list rendering in frontend/js/app.js (fetch items, render photo cards with name/quantity)
-- [ ] T034 [US1] Implement item card component in frontend/js/ui.js (photo thumbnail, name, quantity, visual distinction for zero stock)
-- [ ] T035 [US1] Implement infinite scroll pagination in frontend/js/app.js (lazy load 50 items at a time)
-- [ ] T036 [US1] Implement item detail modal in frontend/js/ui.js (full photo, name, quantity, transaction history list)
-- [ ] T037 [US1] Style inventory cards in frontend/css/styles.css (touch-friendly, responsive grid, grayed-out for zero stock)
-- [ ] T038 [US1] Implement transaction history rendering in frontend/js/app.js (green for additions, red for reductions, timestamp, user, note)
-- [ ] T039 [US1] Implement transaction history pagination in frontend/js/app.js (infinite scroll for history)
+- [X] T026 [P] [US1] Implement ItemRepository.ListAll() in backend/internal/repository/item_repo.go with pagination support (limit, offset)
+- [X] T027 [P] [US1] Implement ItemRepository.GetByID() in backend/internal/repository/item_repo.go with transaction history join
+- [X] T028 [P] [US1] Implement TransactionRepository.ListByItemID() in backend/internal/repository/transaction_repo.go (reverse chronological, pagination)
+- [X] T029 [US1] Implement InventoryService.ListItems() in backend/internal/service/inventory_service.go (calls ItemRepository, handles pagination)
+- [X] T030 [US1] Implement InventoryService.GetItemDetails() in backend/internal/service/inventory_service.go (item + transactions, pagination)
+- [X] T031 [US1] Implement GET /api/items endpoint in backend/internal/api/handlers.go (auth required, pagination params, returns JSON list)
+- [X] T032 [US1] Implement GET /api/items/:id endpoint in backend/internal/api/handlers.go (auth required, returns item + transactions)
+- [X] T033 [US1] Implement inventory list rendering in frontend/js/app.js (fetch items, render photo cards with name/quantity)
+- [X] T034 [US1] Implement item card component in frontend/js/ui.js (photo thumbnail, name, quantity, visual distinction for zero stock)
+- [X] T035 [US1] Implement infinite scroll pagination in frontend/js/app.js (lazy load 50 items at a time)
+- [X] T036 [US1] Implement item detail modal in frontend/js/ui.js (full photo, name, quantity, transaction history list)
+- [X] T037 [US1] Style inventory cards in frontend/css/styles.css (touch-friendly, responsive grid, grayed-out for zero stock)
+- [X] T038 [US1] Implement transaction history rendering in frontend/js/app.js (green for additions, red for reductions, timestamp, user, note)
+- [X] T039 [US1] Implement transaction history pagination in frontend/js/app.js (infinite scroll for history)
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently - users can view inventory list, see item details, and review transaction history
 
@@ -101,20 +101,20 @@ Based on plan.md, this project uses:
 
 ### Implementation for User Story 2
 
-- [ ] T040 [P] [US2] Implement photo validation in backend/internal/service/photo_service.go (file type check: JPEG/PNG/WebP only, max 10MB)
-- [ ] T041 [P] [US2] Implement photo compression in backend/internal/service/photo_service.go (resize to <500KB full-size, generate <50KB thumbnail using image processing library)
-- [ ] T042 [P] [US2] Implement Telegram File API upload in backend/internal/service/photo_service.go (upload compressed photo, get file_id)
-- [ ] T043 [P] [US2] Implement S3 fallback upload in backend/internal/service/photo_service.go (upload to S3-compatible storage, get object key)
-- [ ] T044 [US2] Implement ItemRepository.Create() in backend/internal/repository/item_repo.go (insert item with photo references, return created item with ID)
-- [ ] T045 [US2] Implement TransactionRepository.Create() in backend/internal/repository/transaction_repo.go (insert transaction record, immutable append-only)
-- [ ] T046 [US2] Implement InventoryService.AddItem() in backend/internal/service/inventory_service.go (validate inputs, compress photo, create item, create initial transaction record in ACID transaction)
-- [ ] T047 [US2] Implement POST /api/items endpoint in backend/internal/api/handlers.go (auth required, multipart form with name/photo/quantity, returns created item JSON)
-- [ ] T048 [US2] Implement "Add Item" button in frontend/js/app.js (opens add item modal)
-- [ ] T049 [US2] Implement add item form in frontend/js/ui.js (name input, photo file picker, quantity input, submit button)
-- [ ] T050 [US2] Implement photo upload with progress in frontend/js/app.js (multipart form submission, progress indicator, error handling)
-- [ ] T051 [US2] Implement form validation in frontend/js/app.js (required fields check, clear error messages for missing photo/name)
-- [ ] T052 [US2] Style add item form in frontend/css/styles.css (mobile-friendly inputs, touch-optimized file picker)
-- [ ] T053 [US2] Implement optimistic UI update in frontend/js/app.js (immediately add item to list on submit, show loading state during upload)
+- [X] T040 [P] [US2] Implement photo validation in backend/internal/service/photo_service.go (file type check: JPEG/PNG/WebP only, max 10MB)
+- [X] T041 [P] [US2] Implement photo compression in backend/internal/service/photo_service.go (resize to <500KB full-size, generate <50KB thumbnail using image processing library)
+- [X] T042 [P] [US2] Implement Telegram File API upload in backend/internal/service/photo_service.go (upload compressed photo, get file_id)
+- [X] T043 [P] [US2] Implement S3 fallback upload in backend/internal/service/photo_service.go (upload to S3-compatible storage, get object key)
+- [X] T044 [US2] Implement ItemRepository.Create() in backend/internal/repository/item_repo.go (insert item with photo references, return created item with ID)
+- [X] T045 [US2] Implement TransactionRepository.Create() in backend/internal/repository/transaction_repo.go (insert transaction record, immutable append-only)
+- [X] T046 [US2] Implement InventoryService.AddItem() in backend/internal/service/inventory_service.go (validate inputs, compress photo, create item, create initial transaction record in ACID transaction)
+- [X] T047 [US2] Implement POST /api/items endpoint in backend/internal/api/handlers.go (auth required, multipart form with name/photo/quantity, returns created item JSON)
+- [X] T048 [US2] Implement "Add Item" button in frontend/js/app.js (opens add item modal)
+- [X] T049 [US2] Implement add item form in frontend/js/ui.js (name input, photo file picker, quantity input, submit button)
+- [X] T050 [US2] Implement photo upload with progress in frontend/js/app.js (multipart form submission, progress indicator, error handling)
+- [X] T051 [US2] Implement form validation in frontend/js/app.js (required fields check, clear error messages for missing photo/name)
+- [X] T052 [US2] Style add item form in frontend/css/styles.css (mobile-friendly inputs, touch-optimized file picker)
+- [X] T053 [US2] Implement optimistic UI update in frontend/js/app.js (immediately add item to list on submit, show loading state during upload)
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently - users can view inventory and add new items with photos
 
@@ -128,19 +128,19 @@ Based on plan.md, this project uses:
 
 ### Implementation for User Story 3
 
-- [ ] T054 [P] [US3] Implement ItemRepository.UpdateQuantityWithLock() in backend/internal/repository/item_repo.go (optimistic locking using version field, UPDATE WHERE id = ? AND version = ?)
-- [ ] T055 [US3] Implement InventoryService.RecordAddition() in backend/internal/service/inventory_service.go (validate positive delta, update item quantity with lock, create transaction record in ACID transaction)
-- [ ] T056 [US3] Implement InventoryService.RecordReduction() in backend/internal/service/inventory_service.go (validate delta, check for negative quantity warning, update item with lock, create transaction in ACID transaction)
-- [ ] T057 [US3] Implement PUT /api/items/:id/add endpoint in backend/internal/api/handlers.go (auth required, JSON body with quantity delta and optional note)
-- [ ] T058 [US3] Implement PUT /api/items/:id/remove endpoint in backend/internal/api/handlers.go (auth required, JSON body with quantity delta and optional note)
-- [ ] T059 [US3] Implement optimistic locking error handling in backend/internal/api/handlers.go (detect version mismatch, return 409 Conflict with user-friendly message)
-- [ ] T060 [US3] Implement "Add Stock" button in frontend/js/ui.js (item detail modal, opens quantity change form)
-- [ ] T061 [US3] Implement "Remove Stock" button in frontend/js/ui.js (item detail modal, opens quantity change form)
-- [ ] T062 [US3] Implement quantity change form in frontend/js/ui.js (quantity input, optional note textarea, submit button)
-- [ ] T063 [US3] Implement negative quantity warning in frontend/js/app.js (show warning when reduction exceeds current quantity, allow user to proceed or cancel)
-- [ ] T064 [US3] Implement concurrent update error handling in frontend/js/app.js (detect 409 Conflict response, show "Item was updated by another user, please refresh" message)
-- [ ] T065 [US3] Implement optimistic UI update in frontend/js/app.js (immediately update quantity on submit, show loading state, rollback on error)
-- [ ] T066 [US3] Style quantity change form in frontend/css/styles.css (clear visual distinction for add vs remove, touch-friendly inputs)
+- [X] T054 [P] [US3] Implement ItemRepository.UpdateQuantityWithLock() in backend/internal/repository/item_repo.go (optimistic locking using version field, UPDATE WHERE id = ? AND version = ?)
+- [X] T055 [US3] Implement InventoryService.RecordAddition() in backend/internal/service/inventory_service.go (validate positive delta, update item quantity with lock, create transaction record in ACID transaction)
+- [X] T056 [US3] Implement InventoryService.RecordReduction() in backend/internal/service/inventory_service.go (validate delta, check for negative quantity warning, update item with lock, create transaction in ACID transaction)
+- [X] T057 [US3] Implement PUT /api/items/:id/add endpoint in backend/internal/api/handlers.go (auth required, JSON body with quantity delta and optional note)
+- [X] T058 [US3] Implement PUT /api/items/:id/remove endpoint in backend/internal/api/handlers.go (auth required, JSON body with quantity delta and optional note)
+- [X] T059 [US3] Implement optimistic locking error handling in backend/internal/api/handlers.go (detect version mismatch, return 409 Conflict with user-friendly message)
+- [X] T060 [US3] Implement "Add Stock" button in frontend/js/ui.js (item detail modal, opens quantity change form)
+- [X] T061 [US3] Implement "Remove Stock" button in frontend/js/ui.js (item detail modal, opens quantity change form)
+- [X] T062 [US3] Implement quantity change form in frontend/js/ui.js (quantity input, optional note textarea, submit button)
+- [X] T063 [US3] Implement negative quantity warning in frontend/js/app.js (show warning when reduction exceeds current quantity, allow user to proceed or cancel)
+- [X] T064 [US3] Implement concurrent update error handling in frontend/js/app.js (detect 409 Conflict response, show "Item was updated by another user, please refresh" message)
+- [X] T065 [US3] Implement optimistic UI update in frontend/js/app.js (immediately update quantity on submit, show loading state, rollback on error)
+- [X] T066 [US3] Style quantity change form in frontend/css/styles.css (clear visual distinction for add vs remove, touch-friendly inputs)
 
 **Checkpoint**: At this point, User Stories 1, 2, AND 3 should all work independently - users can view inventory, add items, and track quantity changes with conflict detection
 
@@ -156,9 +156,9 @@ Based on plan.md, this project uses:
 
 **Note**: Transaction history display is already implemented in US1 (T038, T039). This phase adds enhancements for better audit trail visibility.
 
-- [ ] T067 [P] [US4] Implement transaction filtering in backend/internal/repository/transaction_repo.go (filter by date range, transaction type: addition/reduction)
-- [ ] T068 [P] [US4] Implement InventoryService.GetTransactionHistory() in backend/internal/service/inventory_service.go (supports filtering, pagination, sorting)
-- [ ] T069 [US4] Extend GET /api/items/:id/transactions endpoint in backend/internal/api/handlers.go (add filter params: start_date, end_date, type)
+- [X] T067 [P] [US4] Implement transaction filtering in backend/internal/repository/transaction_repo.go (filter by date range, transaction type: addition/reduction)
+- [X] T068 [P] [US4] Implement InventoryService.GetTransactionHistory() in backend/internal/service/inventory_service.go (supports filtering, pagination, sorting)
+- [X] T069 [US4] Extend GET /api/items/:id/transactions endpoint in backend/internal/api/handlers.go (add filter params: start_date, end_date, type)
 - [ ] T070 [US4] Implement transaction filter UI in frontend/js/ui.js (date range picker, type filter: all/additions/reductions)
 - [ ] T071 [US4] Implement transaction export in frontend/js/app.js (download transaction history as CSV for item)
 - [ ] T072 [US4] Style transaction history in frontend/css/styles.css (clear timestamp formatting, user attribution, visual delta indicators)

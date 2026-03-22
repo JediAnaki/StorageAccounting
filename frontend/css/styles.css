@@ -300,3 +300,130 @@ button {
     min-height: 44px;
     min-width: 44px;
 }
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    touch-action: manipulation;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn-success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--tg-theme-hint-color, #999);
+    color: white;
+}
+
+/* Quantity actions */
+.quantity-actions {
+    display: flex;
+    gap: 12px;
+    margin: 16px 0;
+    justify-content: center;
+}
+
+.quantity-actions .btn {
+    flex: 1;
+    max-width: 150px;
+}
+
+/* Quantity change form */
+.quantity-change-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--tg-theme-hint-color, #ccc);
+    border-radius: 8px;
+    font-size: 16px;
+    background: var(--tg-theme-bg-color, #fff);
+    color: var(--tg-theme-text-color, #000);
+    font-family: inherit;
+    touch-action: manipulation;
+}
+
+.form-group input[type="number"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--tg-theme-button-color, #0088cc);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Warning message */
+.warning-message {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 16px 0;
+    color: #856404;
+}
+
+.dark-theme .warning-message {
+    background: #664d03;
+    border-color: #ffc107;
+    color: #ffc107;
+}
+
+.warning-message p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+/* Form actions */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    justify-content: flex-end;
+}
+
+.form-actions .btn {
+    flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .quantity-actions {
+        flex-direction: column;
+    }
+
+    .quantity-actions .btn {
+        max-width: 100%;
+    }
+}
